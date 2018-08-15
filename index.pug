@@ -1,0 +1,706 @@
+//
+// Template name : zeta - creative and amazing portfolio
+// Creation date : 18/03/2018 
+// Author        : Mohssine Aboutaj 
+// Description   : This is template single page for your portfolio
+// Contact Me    : mohssineaboutajtemplates@gmail.com
+//
+='\n'
+//- Directory of all files, css and javaScript and images
+-var imgDirectory = 'img/';
+-var cssDirectory = 'css/';
+-var jsDirectory = 'js/';
+//------------------
+doctype html
+='\n'
+<html lang="en-us">
+<head>
+  meta(charset="utf-8")
+  meta(name="viewport", content="width=device-width, initial-scale=1")
+  ='\n'
+  <!-- page title -->
+  title ZETA - Creative and amazing portfolio
+  ='\n'
+  <!-- fav icon -->
+  link(rel="icon", href=imgDirectory + "logo.ico", type="image/x-icon")
+  <!-- Start google fonts -->
+  each fontURL in [ "https://fonts.googleapis.com/css?family=Open+Sans"]
+    link(rel="stylesheet", href=fontURL)
+  ='\n'
+  <!-- End google fonts -->
+  <!-- Start css files -->
+  <!-- font-awesome iconic v5, bootstrap v4 css, ... -->
+  each cssFile in ["loadingMAF.css","font-awesome-all-v5.min.css", "animate.min.css", "bootstrap.min.css", "style.css"]
+    link(rel="stylesheet", href=cssDirectory + cssFile)
+='\n'
+  <!-- End css files -->
+</head>
+<body data-main-color="#f03434" data-second-color="#fff">
+='\n\n'
+<!-- Start loading animation -->
+div.loadingMAF.loading-glowing
+  each loadingText, n in ['l','o','a','d','i','n','g']
+    div(class="s"+n)= loadingText
+<!-- End loading animation -->
+='\n\n'
+<!-- Start navbar -->
+nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  div.container
+    a(class="navbar-brand", href="#") zeta
+    button(class="navbar-toggler", type="button", data-toggle="collapse", data-target="#navbarSupportedContent", aria-controls="navbarSupportedContent", aria-expanded="false", aria-label="Toggle navigation")
+      i.fas.fa-bars
+    div.collapse.navbar-collapse#navbarSupportedContent
+      ul.navbar-nav.ml-auto
+        li.nav-item.active
+          a(class="nav-link", href="#home") home
+            span.sr-only (current)
+        each link in ["about", "services", "projects", "prices", "team", "testimonials", "blog", "contact"]
+          li.nav-item
+            a(class="nav-link", href="#"+ link)= link
+='\n'
+<!-- End navbar -->
+='\n\n'
+<!-- Start header -->
+header#home
+  div.full-centering.section
+    div.container
+      h1 start your business today
+      p "ZETA" is a creative, wonderful and amazing design, with a host of beautiful features. It is also available a lot of <b>Themes</b> and is <b>fully responsive</b> to all kinds of small, medium and large screens. It is based on <b>Bootstrap</b> framework version 4 and <b>fonAwesome</b> iconic version 5
+      div.btn.btn-bg-main-color buy now 
+        i.fas.fa-shopping-cart
+      div.btn.btn-bg-main-color learn more 
+       i.fab.fa-leanpub
+='\n'
+<!-- End header -->
+='\n\n'
+<!-- Start about us -->
+div#about
+  div.container.section
+    div.special-heading.heading-center
+      h2 about us
+    p.bottom-heading a creative, wonderful and amazing design, with a host of beautiful features. It is also available a lot of Themes and is fully responsive to all kinds of small, medium and large screens.
+    div.row
+      -var aboutClass = ['col-sm-12','col-md-6','wow','bounceInDown']
+      div.about-text(class=aboutClass)
+        h4 wellcome to 
+          span zeta creative 
+          | design agancy thinking creative
+        p a creative, wonderful and amazing design, with a host of beautiful features. It is also available a lot of Themes and is fully responsive to all kinds of small, medium and large screens.
+        div.btn.btn-bg-main-color learn more 
+          i.fab.fa-leanpub
+      div.about-img(class=aboutClass)
+        img(src=imgDirectory + 'about.jpg', alt="about us", title="about us")
+='\n'
+<!-- End about us -->
+='\n\n'
+<!-- Start services -->
+div#services
+  div.container.section
+    div.special-heading.heading-center
+      h2 our services
+    p.bottom-heading a creative, wonderful and amazing design, with a host of beautiful features. It is also available a lot of Themes and is fully responsive to all kinds of small, medium and large screens.
+    -var servicesClass = ['col-xs-12', 'col-sm-6', 'col-md-4']
+    div.row.text-center
+      div(class=servicesClass, class="wow slideInRight")
+        div.card
+          div.card-head
+            i.fas.fa-user.fa-fw
+          div.card-body
+            h4.card-title good treatment
+            p.card-text a creative, wonderful and amazing design, with a host of beautiful features.
+      div(class=servicesClass, class="wow slideInDown")
+        div.card
+          div.card-head
+            i.fas.fa-laptop.fa-fw
+          div.card-body
+            h4.card-title creative design
+            p.card-text a creative, wonderful and amazing design, with a host of beautiful features.
+      div(class=servicesClass, class="wow slideInLeft")
+        div.card
+          div.card-head
+            i.fas.fa-mobile.fa-fw
+          div.card-body
+            h4.card-title app design
+            p.card-text a creative, wonderful and amazing design, with a host of beautiful features.
+      div(class=servicesClass, class="wow slideInLeft")
+        div.card
+          div.card-head
+            i.fas.fa-exchange-alt.fa-fw
+          div.card-body
+            h4.card-title marketing
+            p.card-text a creative, wonderful and amazing design, with a host of beautiful features.
+      div(class=servicesClass, class="wow slideInDown")
+        div.card
+          div.card-head
+            i.fas.fa-code.fa-fw
+          div.card-body
+            h4.card-title best coding
+            p.card-text a creative, wonderful and amazing design, with a host of beautiful features.
+      div(class=servicesClass, class="wow slideInRight")
+        div.card
+          div.card-head
+            i.fab.fa-connectdevelop.fa-fw
+          div.card-body
+            h4.card-title development
+            p.card-text a creative, wonderful and amazing design, with a host of beautiful features.
+='\n'
+<!-- End services -->
+='\n\n'
+<!-- Start working -->
+div.working
+  div.overlay
+    div.container.section
+      -var workingClass = ['wow','bounceInDown','work', 'col-md-6', 'col-lg-3']
+      div.row
+        div(class=workingClass, data-wow-delay="0s")
+          div.working-icon
+            i.fas.fa-cloud-upload-alt.fa-fw
+          div.working-text
+            div 300
+            h6 project complete
+        div(class=workingClass, data-wow-delay="0.25s")
+          div.working-icon
+            i.fas.fa-user.fa-fw
+          div.working-text
+            div 500
+            h6 satisfied customer
+        div(class=workingClass, data-wow-delay="0.5s")
+          div.working-icon
+            i.fas.fa-clock.fa-fw
+          div.working-text
+            div 1200
+            h6 working hours
+        div(class=workingClass, data-wow-delay="0.75s")
+          div.working-icon
+            i.fas.fa-file-code.fa-fw
+          div.working-text
+            div 1995
+            h6 line of code
+='\n'
+<!-- End working -->
+='\n\n'
+<!-- Start project -->
+div#projects
+  div.container.section
+    div.special-heading.heading-center
+      h2 our projects
+    p.bottom-heading a creative, wonderful and amazing design, with a host of beautiful features. It is also available a lot of Themes and is fully responsive to all kinds of small, medium and large screens.
+    div.shuffle.wow.zoomIn
+      ul.nav-shuffle.row
+        li.shuffle-active.col all
+        each shuffleText in ['design', 'develope', 'print', 'video']
+          li(class="col", data-filter=shuffleText)= shuffleText
+      -var shuffleClass = ['image', 'col-xs-6', 'col-sm-4', 'col-md-3', 'col-xl-2']
+      div.row.shuffle-content
+        div(class=shuffleClass)
+          div.shuffle-img.design
+        div(class=shuffleClass)
+          div.shuffle-img.develope
+        div(class=shuffleClass)
+          div.shuffle-img.design
+        div(class=shuffleClass)
+          div.shuffle-img.print
+        div(class=shuffleClass)
+          div.shuffle-img.video
+        div(class=shuffleClass)
+          div.shuffle-img.develope
+        div(class=shuffleClass)
+          div.shuffle-img.video
+        div(class=shuffleClass)
+          div.shuffle-img.print
+
+        div(class=shuffleClass)
+          div.shuffle-img.print
+        div(class=shuffleClass)
+          div.shuffle-img.print
+        div(class=shuffleClass)
+          div.shuffle-img.develope
+        div(class=shuffleClass)
+          div.shuffle-img.video
+
+        div(class=shuffleClass, class="el-hide")
+          div.shuffle-img.design
+        div(class=shuffleClass, class="el-hide")
+          div.shuffle-img.design
+        div(class=shuffleClass, class="el-hide")
+          div.shuffle-img.print
+        div(class=shuffleClass, class="el-hide")
+          div.shuffle-img.print
+      div.btn.view-more view more
+='\n'
+<!-- End project -->
+='\n\n'
+<!-- Start our expert -->
+div.expert
+  div.container.section
+    div.special-heading.heading-center
+      h2 our expert
+    -var expertClass = ['wow', 'rollIn', 'col-sm-2', 'col-md-3']
+    div.row
+      div(class=expertClass)
+        canvas(class="circularProgressMAF", data-progress-value="80")
+        div.title web design
+      div(class=expertClass)
+        canvas(class="circularProgressMAF", data-progress-value="90")
+        div.title web develope
+      div(class=expertClass)
+        canvas(class="circularProgressMAF", data-progress-value="70")
+        div.title pre-proccessing
+      div(class=expertClass)
+        canvas(class="circularProgressMAF", data-progress-value="84")
+        div.title develope
+='\n'
+<!-- End our expert -->
+='\n\n'
+<!-- Start pricing -->
+div#prices
+  div.container.section
+    div.special-heading.heading-center
+      h2 our pricing
+    p.bottom-heading a creative, wonderful and amazing design, with a host of beautiful features. It is also available a lot of Themes and is fully responsive to all kinds of small, medium and large screens.
+    -var pricingClass = ['wow','bounceIn','plan','col-xs-12', 'col-sm-6', 'col-md-3']
+    div.row
+      div(class=pricingClass, data-wow-delay="0s")
+        div.card
+          div.card-header
+            div
+              span.currency $
+              span.number 29
+            span.monthly monthly plan
+          div.card-body
+            h5 starter
+            div
+              i.fas.fa-hdd
+              |  10Tb Storage
+            div
+              i.fas.fa-pencil-alt
+              |  10 Templates
+            div
+              i.fas.fa-globe
+              |  6 Domains
+            div
+              i.fas.fa-envelope
+              |  4 Email
+            div
+              i.fas.fa-times
+              |  php&amp;mySQL
+            div
+              i.fas.fa-times
+              |  eCommerce
+            div
+              i.fas.fa-times
+              |  Wordpress
+          div.card-footer select plan
+      div(class=pricingClass, data-wow-delay="0.25s")
+        div.card
+          div.card-header
+            div
+              span.currency $
+              span.number 49
+            span.monthly monthly plan
+          div.card-body
+            h5 meddle
+            div
+              i.fas.fa-hdd
+              |  20Tb Storage
+            div
+              i.fas.fa-pencil-alt
+              |  30 Templates
+            div
+              i.fas.fa-globe
+              |  15 Domains
+            div
+              i.fas.fa-envelope
+              |  12 Email
+            div
+              i.fas.fa-check
+              |  php&amp;mySQL
+            div
+              i.fas.fa-times
+              |  eCommerce
+            div
+              i.fas.fa-check
+              |  Wordpress
+          div.card-footer select plan
+      div(class=pricingClass, data-wow-delay="0.5s")
+        div.card
+          div.card-header
+            div
+              span.currency $
+              span.number 69
+            span.monthly monthly plan
+          div.card-body
+            h5 advanced
+            div
+              i.fas.fa-hdd
+              |  50Tb Storage
+            div
+              i.fas.fa-pencil-alt
+              |  60 Templates
+            div
+              i.fas.fa-globe
+              |  28 Domains
+            div
+              i.fas.fa-envelope
+              |  20 Email
+            div
+              i.fas.fa-check
+              |  php&amp;mySQL
+            div
+              i.fas.fa-check
+              |  eCommerce
+            div
+              i.fas.fa-times
+              |  Wordpress
+          div.card-footer select plan
+      div(class=pricingClass, data-wow-delay="0.75s")
+        div.card
+          div.card-header
+            div
+              span.currency $
+              span.number 99
+            span.monthly monthly plan
+          div.card-body
+            h5 professional
+            div
+              i.fas.fa-hdd
+              |  unlimited Storage
+            div
+              i.fas.fa-pencil-alt
+              |  unlimited Templates
+            div
+              i.fas.fa-globe
+              |  unlimited Domains
+            div
+              i.fas.fa-envelope
+              |  unlimited Email
+            div
+              i.fas.fa-check
+              |  php&amp;mySQL
+            div
+              i.fas.fa-check
+              |  eCommerce
+            div
+              i.fas.fa-check
+              |  Wordpress
+          div.card-footer select plan
+='\n'
+<!-- End pricing -->
+='\n\n'
+<!-- Start team -->
+div#team
+  div.container.section
+    div.special-heading.heading-center
+      h2 our team
+    p.bottom-heading a creative, wonderful and amazing design, with a host of beautiful features. It is also available a lot of Themes and is fully responsive to all kinds of small, medium and large screens.
+    -var teamClass = ['wow','zoomIn','team','col-xs-12', 'col-sm-6', 'col-md-3']
+    div.row
+      each teamJob, teamName in {'hamza mellahi':'full stack', 'hassan mostafa':'mean stack', 'hamada sinjari':'web designer', 'zouheir etallaoui':'web developer'}
+        div(class=teamClass)
+          div.card
+            img(src=imgDirectory +"team.jpg", alt=teamName, title=teamName +' / '+ teamJob)
+            div.card-title= teamName
+            div.card-text= teamJob
+            div.card-footer
+              div.col.facebook
+                i.fab.fa-facebook-f.fa-fw
+              div.col.twitter
+                i.fab.fa-twitter.fa-fw
+              div.col.youtube
+                i.fab.fa-youtube.fa-fw
+              div.col.linkedin-in
+                i.fab.fa-linkedin-in.fa-fw
+              div.col.google-plus
+                i.fab.fa-google-plus-g.fa-fw
+='\n'
+<!-- Start team -->
+='\n\n'
+<!-- Start with our expert -->
+div#with-our-expert
+  div.overlay
+    div.container.section
+      div.text-center.wow.fadeIn
+        h2 work with our expert to solve problems
+        p.bottom-heading a creative, wonderful and amazing design, with a host of beautiful features. It is also available a lot of <b>The</b> as <b>fulresponsive</b> tl kinds of small, medium and large screens.
+        div.btn.btn-bg-main-color discover more
+
+='\n'
+<!-- Start with our expert -->
+='\n\n'
+<!-- Start why choose us -->
+div#why-choose-us
+  div.container.section
+    div.special-heading.heading-center
+      h2 why choose us
+    p.bottom-heading a creative, wonderful and amazing design, with a host of beautiful features. It is also available a lot of Themes and is fully responsive to all kinds of small, medium and large screens.
+    -var whyChooseClass = ['wow','bounceInDown','choose','col-sm-12', 'col-md-6']
+    div.row
+      div(class=whyChooseClass)
+        ul(class="nav nav-tabs", id="myTab", role="tablist")
+          li.nav-item
+            a(class="nav-link active", id="home-tab", data-toggle="tab", href="#aboutTab", role="tab", aria-controls="home", aria-selected="true") Home
+          li.nav-item
+            a(class="nav-link", id="profile-tab", data-toggle="tab", href="#serviceTab", role="tab", aria-controls="profile") Profile
+          li.nav-item
+            a(class="nav-link", id="contact-tab", data-toggle="tab", href="#contactTab", role="tab", aria-controls="contact") Contact
+        div.tab-content.tabs#myTabContent
+          div(class="tab-pane fade show active", id="aboutTab", role="tabpanel", aria-labelledby="home-tab")
+            img(src=imgDirectory +"aboutTab.jpg", alt="aboutTab")
+            p a creative, wonderful and amazing design, with a host of beautiful features. It is also available a lot of Themes and is fully responsive to all kinds of small, medium and large screens. a creative, wonderful and amazing design, with a host of beautiful features. It is also available a lot of Themes and is fully responsive to all kinds of small, medium and large screens. a creative, wonderful and amazing design, with a host of beautiful features. It is also available a lot of Themes and is fully responsive to all kinds of small, medium and large screens.
+          div(class="tab-pane fade", id="serviceTab", role="tabpanel", aria-labelledby="profile-tab")
+            div.row
+              div.col-sm-6.col-md-4
+                i.fas.fa-camera.fa-fw
+                h5 strategy
+              div.col-sm-6.col-md-4
+                i.fas.fa-laptop.fa-fw
+                h5 creative design
+              div.col-sm-6.col-md-4
+                i.fab.fa-connectdevelop.fa-fw
+                h5 development
+              div.col-sm-6.col-md-4
+                i.fas.fa-exchange-alt.fa-fw
+                h5 marketing
+              div.col-sm-6.col-md-4
+                i.fas.fa-pencil-alt.fa-fw
+                h5 innovation
+              div.col-sm-6.col-md-4
+                i.fas.fa-mobile.fa-fw
+                h5 app design
+          div(class="tab-pane fade", id="contactTab", role="tabpanel", aria-labelledby="contact-tab")
+            form
+              div.row
+                div.col
+                  input(type="text", class="form-control", placeholder="Full Name")
+                div.col
+                  input(type="email", class="form-control", placeholder="Your E-maail")
+              textarea(rows="4", class="form-control", placeholder="Your Message")
+              input(type="submit", class="btn btn-bg-main-color btn-block", value="submit")              
+      div(class=whyChooseClass)
+        div.container-video
+          div.overlay.full-centering
+            div
+              div
+                span.play-video
+              h4 our successfully story
+              p a creative, wonderful and amazing design, with a host of beautiful features.
+='\n'
+<!-- End why choose us -->
+='\n\n'
+<!-- Start testimonials -->
+div#testimonials
+  div.container.section
+    div.special-heading.heading-center
+      h2 what they say
+    p.bottom-heading a creative, wonderful and amazing design, with a host of beautiful features. It is also available a lot of Themes and is fully responsive to all kinds of small, medium and large screens.
+    -var testimClass = ['wow','zoomIn','testim','col-xs-12', 'col-sm-6', 'col-md-3']
+    div.row
+      div(id="whatTheySay", class="carousel slide", data-ride="carousel")
+        ol.carousel-indicators
+          li(data-target="#whatTheySay", data-slide-to="0", class="active")
+          li(data-target="#whatTheySay", data-slide-to="1")
+        div.carousel-inner
+          div.carousel-item.active
+            div.row
+              each testimJob, testimName in {'hamza mellahi':'full stack', 'hassan mostafa':'mean stack', 'hamada sinjari':'web designer', 'zouheir etallaoui':'web developer'}
+                div(class=testimClass)
+                  div.card
+                    img(src=imgDirectory +"team.jpg", alt=testimName, title=testimName +' / '+ testimJob)
+                    div.card-title= testimName
+                    span.card-text= testimJob
+                    div.card-text
+                        i.fas.fa-star
+                        i.fas.fa-star
+                        i.fas.fa-star
+                        i.fas.fa-star
+                    p.card-text a creative, wonderful and amazing design, with a host of beautiful features. It is fully responsive.
+          div.carousel-item
+            div.row
+              each testimJob, testimName in {'hamza mellahi':'full stack', 'hassan mostafa':'mean stack', 'hamada sinjari':'web designer', 'zouheir etallaoui':'web developer'}
+                div(class=testimClass)
+                  div.card
+                    img(src=imgDirectory +"team.jpg", alt=testimName, title=testimName +' / '+ testimJob)
+                    div.card-title= testimName
+                    span.card-text= testimJob
+                    div.card-text
+                        i.fas.fa-star
+                        i.fas.fa-star
+                        i.fas.fa-star
+                        i.fas.fa-star
+                    p.card-text a creative, wonderful and amazing design, with a host of beautiful features. It is fully responsive.
+
+='\n'
+<!-- Start testimonials -->
+='\n\n'
+<!-- Start blog -->
+div#blog
+  div.container.section
+    div.special-heading.heading-center
+      h2 our blog
+    p.bottom-heading a creative, wonderful and amazing design, with a host of beautiful features. It is also available a lot of Themes and is fully responsive to all kinds of small, medium and large screens.
+    -var blogClass = ['wow', 'bounceInDown', 'blog', 'col-xs-12', 'col-sm-6']
+    div.row
+      -var i = 1
+      while i < 3
+        div(class=blogClass, data-wow-delay="0."+ (i*2) +"s")
+          div.card
+            img(src=imgDirectory +"blog"+ i++ +".jpg", alt="blog", class="card-img-top")
+            div.card-body
+              h5.card-title blog 
+                =i - 1
+                |  title
+              div.card-text.row
+                div.col.text-center
+                  div
+                    i.fas.fa-calendar-alt.fa-2x
+                  =(i*3) + 2
+                  |  april 2018
+                div.col.text-center
+                  div
+                    i.fas.fa-comment.fa-2x
+                  =(i*2) + 24
+                  |  comments
+                div.col.text-center
+                  div
+                    i.fas.fa-heart.fa-2x
+                  =(i*4) + 4
+                  |  likes
+              p.card-text a creative, wonderful and amazing design, with a host of beautiful features. It is also available a lot of Themes and is fully responsive to all kinds of small, medium and large screens.
+              div.btn.btn-bg-main-color read more 
+                i.fab.fa-leanpub
+='\n'
+<!-- End blog -->
+='\n\n'
+<!-- Start areYouReady -->
+div.areYouReady
+  div.overlay.wow.fadeIn
+    div.container.section
+      div.text-center
+        div
+          i.fab.fa-twitter.fa-3x
+        p.bottom-heading a creative, wonderful and amazing design, with a host of beautiful features. It is also available a lot of <b>The</b> as <b>fulresponsive</b> tl kinds of small, medium and large screens.
+        span 12 hours ago
+  div.bg-main-color
+    div.container
+      h5.float-left are you ready to start next project ?
+      div.float-right.btn.btn-dark yes, get started
+      div.clearfix
+
+='\n'
+<!-- Start areYouReady -->
+='\n\n'
+<!-- Start contact us -->
+div#contact
+  div.container.section
+    div.special-heading.heading-center
+      h2 contact us
+    p.bottom-heading a creative, wonderful and amazing design, with a host of beautiful features. It is also available a lot of Themes and is fully responsive to all kinds of small, medium and large screens.
+    div.row
+      div.col-sm-12.col-md-4.haveYouQuest.wow.slideInRight
+        h5 have you any questions ?
+        p a creative, wonderful and amazing design, with a host of beautiful features. It is also available a lot of Themes and is fully responsive to all kinds of small, medium and large screens.
+        div.icon
+          span
+            i.fas.fa-map-marker.fa-fw
+          | 12 street X, city, country
+        div.icon
+          span
+            i.fas.fa-phone.fa-fw
+          | +123 456 7890
+        div.icon
+          span
+            i.fas.fa-at.fa-fw
+          | email@domain.com
+        div.icon
+          span
+            i.fas.fa-globe.fa-fw
+          | https://www.your-site.domain
+      div.col-sm-12.col-md-8.wow.slideInLeft
+        form
+          div.row
+            div.col
+              input(type="text", class="form-control", placeholder="Name")
+            div.col
+              input(type="email", class="form-control", placeholder="Email")
+          div.row
+            div.col
+              input(type="url", class="form-control", placeholder="Website")
+            div.col
+              input(type="text", class="form-control", placeholder="Subject")
+          div.row
+            div.col
+              textarea(rows="4", class="form-control", placeholder="Message")
+          div.row.justify-content-center
+            button(type="submit", class="btn btn-bg-main-color")
+              i.fas.fa-paper-plane
+              |  Send Message
+='\n'
+<!-- End contact us -->
+='\n\n'
+<!-- Start footer -->
+footer
+  div.container.section
+    -var footerClass = ['column','col-xs-12','col-sm-6','col-md-3']
+    div.row
+      div(class=footerClass)
+        h5 about zeta
+        p a creative, wonderful and amazing design, with a host of beautiful features. It is also available a lot of Themes and is fully responsive to all kinds of small, medium and large screens.
+        div.row
+          span.facebook
+            i.fab.fa-facebook-f.fa-fw
+          span.twitter
+            i.fab.fa-twitter.fa-fw
+          span.google-plus
+            i.fab.fa-google-plus-g.fa-fw
+          span.youtube
+            i.fab.fa-youtube.fa-fw
+          span.linkedin
+            i.fab.fa-linkedin-in.fa-fw
+      div(class=footerClass)
+        h5 recent posts
+        div.recent-post
+          i.fas.fa-chevron-right
+          | recent post here
+        div.recent-post
+          i.fas.fa-chevron-right
+          | recent post here
+        div.recent-post
+          i.fas.fa-chevron-right
+          | recent post here
+        div.recent-post
+          i.fas.fa-chevron-right
+          | recent post here
+      div(class=footerClass)
+        h5 popular search
+        div.row
+          each tags in ["HTML5","Css3","javaScript","jQuery","Bootstrap 4","Font Awesome 5","Responsive","Blog","zeta","Paralax","Crearive template","Amazing design","Portfolio"]
+            span.tags= tags
+      div(class=footerClass)
+        h5 gallery
+        div.row
+          -var j = 1
+          while j < 10
+            ='\n'
+            div.img-gallery
+              img(src=imgDirectory +"gallery"+ j++ +".jpg", alt="gallery", title="gallery")
+  div.page-bottom
+    div.container
+      div.row.align-items-center
+        div.copyright.col
+          | &copy; 2018 designed by 
+          b mohssine aboutaj 
+          |  - all right reserved 
+        div.navbar-bottom.col
+          ul
+            each link in ["home", "about", "blog", "contact", "FAQ", "support"]
+              li.nav-item
+                a(class="nav-link", href="#"+ link)= link
+='\n'
+<!-- End footer -->
+='\n\n'
+<!-- Script files -->
+each jsFile in ["jquery-3.1.1.min.js", "popper.min.js", "bootstrap.min.js", "scrollTopMAF.js", "jquery.nicescroll.min.js", "wow.min.js", "custom.js"]
+  script(src=jsDirectory + jsFile)
+='\n'
+</body>
+</html>

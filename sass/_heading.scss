@@ -1,0 +1,60 @@
+/* Styles for special heading */
+%extend-special-heading {
+  @extend %rel;
+  border-bottom: 1px solid $xColor;
+  @extend %ib;
+  padding: 20px 40px;
+  margin-bottom: 10px;
+}
+
+%extend-special-heading-after {
+  content: '';
+  @extend %abs;
+  bottom: 0;
+  width: 20%;
+  border-bottom: 1px solid transparent;
+  border-color: inherit;
+  padding: 0;
+}
+
+%heading-aside-h-all {
+  padding: 10px 0
+}
+
+%heading-center-after {
+  #{$right}: 40%;
+  #{$left}: 40%;
+}
+
+%heading-aside-after {
+  #{$left}: 0;
+}
+
+// convert letters of all Heading to UPPERCASE
+@for $heading from 1 through 6 {
+  h#{$heading}, h#{$heading} * {
+    @extend %upper;
+  }
+
+  .heading-aside h#{$heading} { @extend %heading-aside-h-all; }
+
+  .special-heading h#{$heading} { @extend %extend-special-heading }
+
+  .special-heading h#{$heading}::after { @extend %extend-special-heading-after }
+
+  .heading-aside h#{$heading}::after { @extend %heading-aside-after }
+
+  .heading-center h#{$heading}::after { @extend %heading-center-after }
+}
+
+.heading-center {
+  @extend %txt-c;
+  margin: 0 auto;
+}
+
+.heading-aside {
+  text-align: $left;
+  @extend %no-border;
+  @extend %nopm;
+}
+/********************/

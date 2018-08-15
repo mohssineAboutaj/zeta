@@ -1,0 +1,166 @@
+/*
+*** Project Name : loadingMAF
+***	Autor        : Mohssine Aboutaj
+*** License      : FREE
+*** Contact      : mohssineaboutajtemplates@gmail.com
+*** Source code  : https://github.com/mohssineAboutaj/gridSystemMAF/blob/master/css/loadingMAF.css
+*** How to use & live prewiew : https://codepen.io/MohssineAboutajWeb/post/loading-animation
+*/
+
+/* global styles */
+* { margin: 0;padding: 0 }
+
+.loadingMAF {
+	background-color: #272727;
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	z-index: 9999;
+}
+
+/* loading glowing */
+.loading-glowing {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: center;
+	-ms-align-items: center;
+	align-items: center;
+}
+
+.loading-glowing > * {
+	background-color: #f03434;
+	color: #fff;
+	text-align: center;
+	font-size: .25em;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin: 0 20px;
+	width: 10px;
+	height: 10px;
+	line-height: 10px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	-webkit-box-shadow: 0 0 5px #F5D76E;
+	box-shadow: 0 0 7px #F5D76E;
+	-webkit-animation: scale 3s ease-in-out infinite;
+	-moz-animation: scale 3s ease-in-out infinite;
+	-o-animation: scale 3s ease-in-out infinite;
+	animation: scale 3s ease-in-out infinite;
+}
+
+.loading-glowing .s1 {
+	-webkit-animation-delay: 0s;
+	-moz-animation-delay: 0s;
+	-o-animation-delay: 0s;
+	animation-delay: 0s;
+}
+.loading-glowing .s2 {
+	-webkit-animation-delay: 0.3s;
+	-moz-animation-delay: 0.3s;
+	-o-animation-delay: 0.3s;
+	animation-delay: 0.3s;
+}
+.loading-glowing .s3 {
+	-webkit-animation-delay: 0.6s;
+	-moz-animation-delay: 0.6s;
+	-o-animation-delay: 0.6s;
+	animation-delay: 0.6s;
+}
+.loading-glowing .s4 {
+	-webkit-animation-delay: 0.9s;
+	-moz-animation-delay: 0.9s;
+	-o-animation-delay: 0.9s;
+	animation-delay: 0.9s;
+}
+.loading-glowing .s5 {
+	-webkit-animation-delay: 1.2s;
+	-moz-animation-delay: 1.2s;
+	-o-animation-delay: 1.2s;
+	animation-delay: 1.2s;
+}
+.loading-glowing .s6 {
+	-webkit-animation-delay: 1.5s;
+	-moz-animation-delay: 1.5s;
+	-o-animation-delay: 1.5s;
+	animation-delay: 1.5s;
+}
+.loading-glowing .s7 {
+	-webkit-animation-delay: 1.8s;
+	-moz-animation-delay: 1.8s;
+	-o-animation-delay: 1.8s;
+	animation-delay: 1.8s;
+}
+.loading-glowing .s8 {
+	-webkit-animation-delay: 2.1s;
+	-moz-animation-delay: 2.1s;
+	-o-animation-delay: 2.1s;
+	animation-delay: 2.1s;
+}
+.loading-glowing .s9 {
+	-webkit-animation-delay: 2.4s;
+	-moz-animation-delay: 2.4s;
+	-o-animation-delay: 2.4s;
+	animation-delay: 2.4s;
+}
+.loading-glowing .s10 {
+	-webkit-animation-delay: 2.7s;
+	-moz-animation-delay: 2.7s;
+	-o-animation-delay: 2.7s;
+	animation-delay: 2.7s;
+}
+
+@-webkit-keyframes scale {
+	0%, 100% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+	20% {
+		-webkit-transform: scale(4);
+		transform: scale(4);
+	}
+}
+
+@-moz-keyframes scale {
+	0%, 100% {
+		-moz-transform: scale(1);
+		transform: scale(1);
+	}
+	20% {
+		-moz-transform: scale(4);
+		transform: scale(4);
+	}
+}
+
+@-o-keyframes scale {
+	0%, 100% {
+		-webkit-transform: scale(1);
+		-o-transform: scale(1);
+		transform: scale(1);
+	}
+	20% {
+		-webkit-transform: scale(4);
+		-o-transform: scale(4);
+		transform: scale(4);
+	}
+}
+
+@keyframes scale {
+	0%, 100% { transform: scale(1) }
+	20% { transform: scale(4) }
+}
+
+@media (max-width: 768px) {
+	.loading-glowing > * {
+		font-size: 5px;
+		margin: 0 10px;
+		padding: 0 5px
+	}
+}
